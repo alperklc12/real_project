@@ -1,0 +1,15 @@
+import os
+import shutil
+
+url = 'D:/Depo/Programlama Dersleri/Yeni klasör/Python ile Oyun Programlama - PyGame'
+
+os.chdir(url)
+
+for item in os.listdir(url):
+    if os.path.isdir(item):
+        for j in os.walk(item):
+            rel_url = url + '/' + j[0]
+            if j[2]:
+                fl, ext = os.path.splitext(j[2][0])
+                fin_url = rel_url + '/' + fl + ext
+                shutil.move(fin_url, url + '/' + fl + ext)
