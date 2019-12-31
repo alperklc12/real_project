@@ -1,0 +1,9 @@
+import random
+mystr = 'ankara'
+
+mystr_lst = list(mystr)
+random.shuffle(mystr_lst)
+
+new_mystr = ''.join(mystr_lst)
+
+print(new_mystr)
