@@ -1,0 +1,24 @@
+mystr = 'kkwcccddee'
+output = '2kk1w3ccc2dd2ee'
+
+mystr_set = set(mystr)
+new_mystr = ''
+fin_lst = []
+fin_lst2 = []
+
+for e in mystr_set:
+    idx = mystr.find(e)
+    count = mystr.count(e)
+    new_mystr = mystr[:idx] + f"{count}" + mystr[idx:]
+    fin_lst.append(new_mystr[idx: (idx + count) + 1])
+
+order_str = "kwcde"
+
+result = ''
+
+for i in order_str:
+    for j in fin_lst:
+        if i in j:
+            fin_lst2.append(j)
+
+print(''.join(fin_lst2))
