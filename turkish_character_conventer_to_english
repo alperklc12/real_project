@@ -1,8 +1,8 @@
 def convert_letter(sentence):
     sz = {'ı': 'i', 'ü': 'u', 'ç': 'c', 'ö': 'o', 'ş': 's'}
-    n_word = ''
+    n_sentence = ''
 
     for h in sentence:
         if h in 'şçöüı':
             n_word = sentence.replace(h, sz[h])
-    return n_word
+    return n_sentence
