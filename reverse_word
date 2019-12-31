@@ -1,0 +1,13 @@
+my_str = 'istanbul'
+output = 'lubnatsi'
+
+# my_str_rev = my_str[::-1]
+# print(my_str_rev)
+
+my_lst = list(my_str)
+rev_str = ''
+print(my_lst)
+for i in range(len(my_lst)):
+    rev_str += my_lst.pop()
+
+print(rev_str)
