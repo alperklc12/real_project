@@ -1,0 +1,7 @@
+my_min= 128
+output = '2:8'
+
+my_mod2 = my_min % 60
+my_mod1 = divmod(my_min, 60)
+my_str = '{}:{}'.format(*my_mod1)
+print(my_str)
