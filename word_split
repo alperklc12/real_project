@@ -1,0 +1,16 @@
+a_lst = ['deeplearning', 'd,dll,a,learning,deep,base,lear,dee']
+ 
+b_lst = a_lst[1].split(',')
+ 
+c_lst = []
+ 
+for item in b_lst:
+    item_len = len(item)
+    a_word = a_lst[0][:item_len]
+    b_word = a_lst[0][item_len:]
+    if b_word in b_lst:
+        c_lst.append(a_word)
+        c_lst.append(b_word)
+        break
+ 
+print(c_lst)
