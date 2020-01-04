@@ -1,0 +1,37 @@
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push_(self, data):
+        self.items.insert(0, data)
+
+    def pop_(self):
+        self.items.pop(0)
+
+    def __repr__(self):
+        return f'{self.items}'
+
+    def __len__(self):
+        return len(self.items)
+
+    def __getitem__(self, item):
+        return self.items[item]
+
+
+def reverse_fn(word: str):
+    a_stack = Stack()
+
+    for lt in word:
+        a_stack.push_(lt)
+
+    b_str = ''
+
+    for lt in a_stack:
+        b_str += lt
+
+    return b_str
+
+
+a_srt = 'python'
+
+print(reverse_fn(a_srt))
