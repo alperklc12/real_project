@@ -1,0 +1,28 @@
+class Queues:
+    def __init__(self):
+        self.items = []
+
+    def isempty(self):
+        return not bool(len(self.items))
+
+    def push_(self, data):
+        self.items.append(data)
+
+    def pop_(self):
+        return self.items.pop(0)
+
+    def __repr__(self):
+        return f'{self.items}'
+
+queues = Queues()
+queues.push_(10)
+queues.push_(20)
+queues.push_(30)
+queues.push_(40)
+queues.push_(50)
+
+print(queues)
+print('*******')
+print(queues.pop_())
+print(queues)
+print(queues.isempty())
