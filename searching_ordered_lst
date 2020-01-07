@@ -1,0 +1,9 @@
+def find_uo(lst: list, n: int):
+    for item in lst:
+        print(item)
+        if item > n:
+            break
+        if item == n:
+            return lst.index(item)
+
+    return -1
