@@ -1,0 +1,11 @@
+a_lst =[5, 7, 2, 3, 15, 8, 100, 12]
+
+def find_e(lst: list, n: int):
+    for item in lst:
+        if item == n:
+            return lst.index(item)
+
+    return 'Not Found'
+
+
+print(find_e(a_lst, 2))
