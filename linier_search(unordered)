@@ -5,7 +5,7 @@ def find_e(lst: list, n: int):
         if item == n:
             return lst.index(item)
 
-    return 'Not Found'
+    return -1
 
 
 print(find_e(a_lst, 2))
