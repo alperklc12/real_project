@@ -1,0 +1,23 @@
+b_lst = [2, 3, 5, 7, 8, 12, 14, 15, 27, 89, 100]
+
+
+def find_b(lst: list, n: int):
+    f_idx = 0
+    l_idx = len(lst) - 1
+    found = False
+
+    while f_idx <= l_idx and not found:
+        mid_idx = int((f_idx + l_idx) / 2)
+
+
+        if lst[mid_idx] == n:
+            found = True
+        else:
+            if n < lst[mid_idx]:
+                l_idx = mid_idx - 1
+                print('lower', mid_idx)
+            else:
+                f_idx = mid_idx + 1
+                print('upper', mid_idx)
+
+    return found
