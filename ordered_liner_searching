@@ -1,4 +1,7 @@
-def find_uo(lst: list, n: int):
+a_lst = [5, 7, 14, 27, 89, 2, 3, 15, 8, 100, 12]
+b_lst = sorted(a_lst)
+
+def find_o(lst: list, n: int):
     for item in lst:
         print(item)
         if item > n:
