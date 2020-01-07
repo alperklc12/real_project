@@ -1,11 +1,11 @@
-a_lst =[5, 7, 2, 3, 15, 8, 100, 12]
+a_lst = [5, 7, 14, 27, 89, 2, 3, 15, 8, 100, 12]
 
-def find_e(lst: list, n: int):
+def find_uo(lst: list, n: int):
     for item in lst:
+        print(item)
         if item == n:
             return lst.index(item)
 
     return -1
 
 
-print(find_e(a_lst, 2))
