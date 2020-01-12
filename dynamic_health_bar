@@ -1,0 +1,38 @@
+def status_bar(hp):
+    bar = ''
+    bar_tick = hp / 10
+
+    while len(bar) < bar_tick:
+        bar += '█'
+
+    while bar_tick < 10:
+        bar += ' '
+        bar_tick += 1
+
+    return bar
+
+
+def calculate():
+
+    pl_hp = 100
+    pl_hp_mx = 100
+
+    print(str(pl_hp) + '/' + str(pl_hp_mx) + '|' + status_bar(pl_hp) + '|\n')
+
+    while True:
+        cmd = int(input('1 or 2'))
+
+        if cmd == 1:
+            pl_hp -= 10
+            if pl_hp < 0:
+                pl_hp = 0
+
+        elif cmd == 2:
+            pl_hp += 10
+            if pl_hp > pl_hp_mx:
+                pl_hp = pl_hp_mx
+
+        print(str(pl_hp) + '/' + str(pl_hp_mx) + '|' + status_bar(pl_hp) + '|\n')
+
+
+calculate()
