@@ -1,0 +1,118 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+    def __repr__(self):
+        return '<{}>'.format(self.data)
+
+
+class LinkList:
+    def __init__(self):
+        self.head = None
+
+    def add_to_head(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+
+    def add_to_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+
+        while current.next:
+            current = current.next
+
+        current.next = new_node
+
+    def insert(self, data, value):
+        if self.head is None:
+            print('list is empty')
+            return
+
+        new_node = Node(data)
+        current = self.head
+
+        while current:
+            if current.data == value:
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+
+    def traverse(self):
+        current = self.head
+        while current:
+            print(current)
+            current = current.next
+
+    def get_item(self, i):
+        current = self.head
+        j = 0
+        while current and j < i:
+            j += 1
+            current = current.next
+        return current
+
+    def delet_to_head(self):
+        if self.head is None:
+            print('list is empty')
+        self.head = self.head.next
+
+    def delet_to_end(self):
+        if self.head is None:
+            print('list is empty')
+            return
+
+        if self.head.next:
+            previus = self.head
+            current = previus.next
+            while current.next:
+                previus = current
+                current = current.next
+
+            previus.next = None
+            current = None
+        else:
+            raise Exception("There's only one item on the list. Therefore, you cannot process with this method.")
+
+    def __len__(self):
+        if self.head is None:
+            return 0
+
+        i = 1
+        current = self.head
+        while current.next:
+            current = current.next
+            i += 1
+        return i
+
+    def __getitem__(self, item):
+        current = self.head
+        j = 0
+        while current and j < item:
+            j += 1
+            current = current.next
+        if item > len(self) - 1:
+            raise IndexError('list index out of range')
+        else:
+            return current.data
+
+
+a_lst = LinkList()
+a_lst.add_to_end(10)
+a_lst.add_to_end(20)
+a_lst.add_to_end(30)
+a_lst.add_to_end(40)
+a_lst.add_to_end(50)
+a_lst.add_to_end(60)
+
+for item in a_lst:
+    print(item)
