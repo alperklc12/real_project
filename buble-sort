@@ -1,0 +1,19 @@
+b_lst = [100, 89, 8, 12, 2, 3, 5, 27, 15, 14, 7]
+
+def buble_sort(arr):
+    n = len(arr) -1
+    
+    while n > 0:
+        k = 0
+        while k < n:
+            if arr[k] > arr[k + 1]:
+                temp = arr[k]
+                arr[k] = arr[k + 1]
+                arr[k + 1] = temp
+
+            k += 1
+        n -= 1
+
+
+buble_sort(b_lst)
+print(b_lst)
