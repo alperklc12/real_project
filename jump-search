@@ -1,0 +1,40 @@
+import math
+
+lst = [1, 6, 8, 12, 15, 26, 32, 57, 91, 101, 123, 176, 188]
+
+
+def jump_search(arr, val):
+    n = len(lst)
+    step = 0
+    found = False
+
+    if arr[step] == val:
+        found = True
+
+    while step <= len(arr) - 1 and not found:
+        if arr[step] == val:
+            found = True
+            break
+        else:
+            step += int(math.sqrt(len(arr)))
+            if step >= n:
+                step = n - 1
+                break
+
+        if arr[step] <= val:
+            break
+
+    step -= int(math.sqrt(len(arr)))
+
+    while step <= len(arr) - 1 and not found:
+        if arr[step] == val:
+            found = True
+            break
+        step += 1
+    else:
+        return found
+
+    return found
+
+
+print(jump_search(lst, 25))
