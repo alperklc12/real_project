@@ -1,0 +1,16 @@
+lst = [61, 45, 83, 68, 21, 79, 18, 9, 10, 72, 5, 7, 32, 12, 58, 21]
+
+
+def buble_sort(arr):
+    for i in range(0, len(arr) - 1):
+        for j in range(0, (len(arr) -1) - i):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+    return arr
+
+
+print(lst)
+buble_sort(lst)
+print(lst)
