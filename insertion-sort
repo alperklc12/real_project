@@ -1,0 +1,16 @@
+lst = [61, 45, 8, 68, 21, 79, 18, 9, 10, 72, 5, 7, 32, 12, 58, 21]
+
+
+def insertion_search(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+
+insertion_search(lst)
+print(lst)
