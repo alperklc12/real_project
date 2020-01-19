@@ -1,0 +1,36 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def __repr__(self):
+        return f'<{self.data}>'
+
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert_fn(self, data):
+        new_node = Node(data)
+
+        if self.root is None:
+            self.root = new_node
+            return
+
+        current = self.root
+
+        while current:
+            if data < current.data:
+                if current.left is None:
+                    current.left = new_node
+                    break
+                else:
+                    current = current.left
+            else:
+                if current.right is None:
+                    current.right = new_node
+                    break
+                else:
+                    current = current.right
