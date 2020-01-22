@@ -1,0 +1,67 @@
+class LinkList:
+    def __init__(self):
+        self.head = None
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+    def __repr__(self):
+        return f'<{self.data}>'
+
+
+def add_to_start(lst: LinkList, data: int):
+    new_node = Node(data)
+    if lst.head is None:
+        lst.head = new_node
+        return
+
+    new_node.next = lst.head
+    lst.head = new_node
+
+
+def travers(lst: LinkList):
+    current = lst.head
+    while current:
+        print(current)
+        current = current.next
+
+
+def delete_item(lst: LinkList, i:int = 0):
+    prev = None
+    current = lst.head
+    j = 0
+    while current and j < i:
+        prev = current
+        current = current.next
+        j += 1
+
+    prev.next = current.next
+    current = None
+
+
+prime_num = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
+
+
+def prime_mult(n, tpl):
+    a_lst = LinkList()
+    lst_ = []
+    for i in tpl:
+        while n > 1:
+            if n%i == 0:
+                n /= i
+                lst_.append(i)
+            else:
+                break
+
+    c_lst = list(set(lst_))
+    for i in range(len(c_lst)):
+        add_to_start(a_lst, c_lst[i])
+    return a_lst
+
+
+b_lst = prime_mult(60, prime_num)
+
+travers(b_lst)
