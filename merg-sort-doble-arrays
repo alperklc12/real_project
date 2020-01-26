@@ -1,0 +1,29 @@
+lst1 = [0, 3, 4, 31]
+lst2 = [4, 6, 30]
+
+
+#  [0, 3, 4, 6, 30, 31]   output
+
+
+def merg_sorted_arrays(arr1: list, arr2: list):
+    #  arr1.extend(arr2) built in version
+    _join_arrays(arr1, arr2)
+    #  arr1.sort() built in version
+
+    for i in range(len(arr1) - 1):  # Buble Sort
+        for j in range((len(arr1) - 1) - i):
+            if arr1[j] > arr1[j + 1]:
+                temp = arr1[j]
+                arr1[j] = arr1[j + 1]
+                arr1[j + 1] = temp
+
+    return arr1
+
+
+def _join_arrays(arr1, arr2):
+    for i in range(len(arr2)):
+        if i not in arr1:
+            arr1 += [arr2[i]]
+
+
+print(merg_sorted_arrays(lst1, lst2))
